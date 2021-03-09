@@ -41,7 +41,9 @@ namespace Practice_C_sharp
 
         public pair findMin(TreeNode root, TreeNode parent)
         {
-            if (root != null && root.left != null) return findMin(root.left, root);
+            if (root != null && root.left != null) 
+                return findMin(root.left, root);
+
             return new pair(root, parent);
         }
 
@@ -53,7 +55,7 @@ namespace Practice_C_sharp
                 // update the parent node
                 if (parent != null && parent.right == root)
                     parent.right = null;
-                if (parent != null && root.left == root)
+                if (parent != null && parent.left == root)
                     parent.left = null;
             }
 
@@ -77,7 +79,7 @@ namespace Practice_C_sharp
 
             else
             {
-                pair res = findMin(root.right, parent);
+                pair res = findMin(root.right, root);
                 root.val = res.f.val;
 
                 delete(res.f, res.s);
