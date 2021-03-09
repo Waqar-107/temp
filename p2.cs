@@ -77,7 +77,7 @@ namespace Practice_C_sharp
 
             else
             {
-                pair res = findMin(root, parent);
+                pair res = findMin(root.right, parent);
                 root.val = res.f.val;
 
                 delete(res.f, res.s);
